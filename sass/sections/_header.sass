@@ -1,0 +1,37 @@
+
+header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: rgba(0,0,0,.5)
+  height: 60px
+  backdrop-filter: blur(10px)
+  & .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+  & nav 
+    width: 30%
+    & ul
+      justify-content: flex-end 
+      display: flex
+      align-items: center
+      & li
+        margin: 0 5px
+        list-style: none
+        & a 
+          text-decoration: none
+          color: #fff
+          padding: 5px 15px
+          font-size: 1.6rem
+          font-family: Raleway, sans-serif
+          font-weight: 300
+  & .logo
+    font-family: Montserrat, sans-serif
+    font-weight: 600
+    letter-spacing: 0.05em
+    color: #ffffff
+    font-size: 3.4rem
+    width: 40%
