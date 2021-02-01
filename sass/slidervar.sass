@@ -1,13 +1,11 @@
 *
   font-size: 10px
+  &:focus 
+    outline: none
 
 body, html
   margin: 0
   padding: 0
-  
-  
-a:focus 
-  outline: none
 
 
   
@@ -45,13 +43,19 @@ a:focus
         transform: none !important
         justify-content: center
       &-item
-        margin: 10px
+        margin: 15px
         width: 150px !important
-        height: 65px !important
+        height: 70px !important
         overflow: hidden
+        box-shadow: 0px 0px 15px rgba(0,0,0,.8)
+        transition: .4s all ease
+        cursor: pointer
         & img
           object-fit: cover
           width: 100%
+        &.slick-current
+          box-shadow: 0px 0px 15px rgba(0,0,0,.4)
+          transform: scale(1.1)
     &__item
       height: 100vh !important
       position: relative
@@ -74,7 +78,7 @@ a:focus
         position: relative
         display: flex
         justify-content: center
-        box-shadow: 0px 0px 30px rgba(0,0,0,.5)
+        box-shadow: 0px 0px 50px rgba(0,0,0,1)
         & img
           height: 100%
           object-fit: cover

@@ -4,6 +4,10 @@ jQuery(document).ready(function ($) {
     slidesToScroll: 1,
     arrows: false,
     asNavFor: ".main-slider__nav",
+    autoplay: true,
+    infinite: true,
+    speed: 1000,
+    autoplaySpeed: 4000,
   });
   $(".main-slider__nav").slick({
     slidesToShow: 5,
