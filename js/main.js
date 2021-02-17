@@ -16,10 +16,11 @@ jQuery(document).ready(function ($) {
     centerMode: true,
     focusOnSelect: true,
   });
-  // $(".main-games").slick({
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   centerMode: true,
-  //   arrows: false,
-  // });
+
+  $(".main-games").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    centerMode: true,
+    arrows: false,
+  });
 });
