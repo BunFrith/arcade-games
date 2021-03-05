@@ -37,3 +37,60 @@ header
     color: #ffffff
     font-size: 3.4rem
     width: 40%
+
+
+.cat
+  &-menu
+    & li
+      position: relative
+  &-button
+    font-family: Montserrat, sans-serif
+    transition: .4s all ease
+    width: 130px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    font-size: 1.8rem
+    background-color: #28a745
+    border: 1px solid #28a745
+    cursor: pointer
+    &:hover
+      background-color: #218838
+      border-color: #1e7e34
+    & span
+      margin-left: 10px
+      margin-top: 3px
+      transform: rotate(90deg)
+      font-size: 2.2rem
+      line-height: 2rem
+  &-submenu
+    transition: .4s all ease
+    transform-origin: 0 0
+    transform: scaleY(0)
+    display: flex
+    width: 100%
+    flex-direction: column
+    position: absolute
+    background: rgba(0, 0, 0, .8)
+    left: 0
+    padding-inline-start: 0
+    & li
+      width: 100%
+      padding: 0
+      margin: 0 
+      &:hover
+        background: rgba(0, 0, 0, .5)
+        & a 
+          padding-left: 25px
+      & a
+        font-weight: 500
+        font-family: Montserrat, sans-serif
+        transition: .4s all ease
+        padding-left: 22px
+        padding-top: 8px
+        padding-bottom: 8px
+        display: flex
+
+.cat-button_li:hover .cat-submenu
+  transform: scaleY(1)
