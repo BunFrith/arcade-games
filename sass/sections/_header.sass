@@ -1,7 +1,7 @@
 
 header
   position: fixed
-  z-index: 55
+  z-index: 99
   top: 0
   left: 0
   width: 100%
@@ -15,7 +15,9 @@ header
     align-items: center
     height: 100%
   & nav 
-    width: 30%
+    width: 40%
+    display: flex
+    justify-content: flex-end
     & ul
       justify-content: flex-end 
       display: flex
@@ -41,12 +43,13 @@ header
 
 .cat
   &-menu
+    padding-inline-start: 0
     & li
       position: relative
   &-button
     font-family: Montserrat, sans-serif
     transition: .4s all ease
-    width: 130px
+    width: 135px
     display: flex
     flex-wrap: wrap
     justify-content: center
@@ -96,3 +99,6 @@ header
 
 .cat-button_li:hover .cat-submenu
   transform: scaleY(1)
+
+.d-block
+  display: none

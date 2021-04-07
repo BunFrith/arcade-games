@@ -1,7 +1,10 @@
 .sgame
+  flex-flow: wrap
+  display: flex
+  flex-direction: column
   & hr
     color: #FFF
-    background-color: rgba(220, 220, 220, .4)
+    background-color: rgba(220, 220, 220, .07)
     border: 0px none
     height: 1px
     margin: 20px
@@ -16,6 +19,7 @@
     font-weight: 600
     color: #fff
   &-info
+    order: 2
     position: relative
     display: flex
     flex-wrap: wrap
@@ -33,14 +37,72 @@
       color: #fff
       line-height: 1.3em
       // letter-spacing: 0.1em
+
   &-content
+    position: relative
+    z-index: 96
+    order: 1
     &__game
       width: 100%
       height: 80vh
       & iframe
         width: 100%
         height: 100%  
+    &__panel
+      background-color: rgba(21, 23, 37, .7)
+      position: relative
+      height: 40px
+      width: 100%
+      color: #fff
+      display: flex
+      align-items: center
+      justify-content: space-between
+      & h2
+        font-size: 2rem
+        font-family: Montserrat, sans-serif
+        font-weight: 500
+        letter-spacing: 0.1em
+        line-height: 1.2em
+        margin: 0
+        text-align: center
+      &-buttons
+        width: 20%
+        justify-content: flex-end
+        position: relative
+        display: flex
+      &-favourites
+        width: 20%
+        margin-left: 10px
+        filter: blur(.5px)
+        & svg 
+          cursor: pointer
+          width: 30px
+          fill: #fff
+          filter: drop-shadow(0px 0px 5px #fff)
+      &-darken
+        height: 100%
+        cursor: pointer
+        padding: 0px 10px
+        & svg
+          width: 30px
+          & path 
+            fill: #fff
+      &-reinit
+        padding: 0px 10px
+        cursor: pointer
+        & svg
+          width: 30px
+          transform: rotateY(180deg)
+          & path 
+            fill: #fff
+      &-fullscreen
+        padding: 0px 10px
+        cursor: pointer
+        & svg
+          width: 30px
+        
   &-similar
+    order: 3
     & span 
       font-size: 2.4rem
       color: #fff 
@@ -54,3 +116,42 @@
       display: flex
       flex-wrap: wrap
       justify-content: space-between
+
+
+.darken-mode
+  position: fixed
+  top: 0
+  left: 0
+  background-color: rgba(0, 0, 0, .7)
+  width: 100% 
+  height: 100%
+  z-index: 95
+  transition: .4s all ease
+  opacity: 0
+  visibility: hidden
+.mode-active
+  transition: .4s all ease
+  opacity: 1
+  visibility: visible
+
+
+
+
+
+
+.sgame-content.fullscreen
+  position: fixed
+  background-color: #000
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 99
+  & .sgame-content__game
+    height: 100vh
+
+
+
+.delgame
+  color: #fff
+  font-size: 1.8rem

@@ -1,22 +1,44 @@
 jQuery(document).ready(function ($) {
-  $(".main-slider").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    asNavFor: ".main-slider__nav",
-    autoplay: true,
-    infinite: true,
-    speed: 1000,
-    autoplaySpeed: 4000,
+  $(".sgame-content__panel-darken").click(function () {
+    $(".darken-mode").toggleClass("mode-active");
   });
-  $(".main-slider__nav").slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    asNavFor: ".main-slider",
-    centerMode: true,
-    focusOnSelect: true,
+  $(".sgame-content__panel-reinit").click(function () {
+    $("#gameframe")[0].contentWindow.location.reload(true);
   });
-  setInterval(function () {
-    $(".cat-button_li").toggleClass("animate__animated");
-  }, 2000);
+
+  function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+
+    if (requestMethod) {
+      // Native full screen.
+      requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") {
+      // Older IE.
+      var wscript = new ActiveXObject("WScript.Shell");
+      if (wscript !== null) {
+        wscript.SendKeys("{F11}");
+      }
+    }
+  }
+
+  $(".sgame-content__panel-fullscreen").click(function () {
+    $(".sgame-content").toggleClass("fullscreen");
+    $("header").toggleClass("d-block");
+    var elem = document.body;
+    var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) || (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) || (document.mozFullScreenElement && document.mozFullScreenElement !== null) || (document.msFullscreenElement && document.msFullscreenElement !== null);
+    if (!isInFullScreen) {
+      requestFullScreen(elem);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  });
 });

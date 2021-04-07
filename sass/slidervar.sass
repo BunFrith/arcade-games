@@ -13,6 +13,9 @@ body, html
   
 @import 'sections/_containers'
 @import 'sections/_header'
+@import 'sections/_favs'
+@import 'sections/_list-games'
+
   
   
   
@@ -70,10 +73,12 @@ body, html
         height: 100%
         display: flex
         align-items: center
-        justify-content: space-between
+        flex-direction: column
       &-img
-        width: 30%
-        height: 50vh
+        margin-top: 130px
+        margin-bottom: -80px
+        width: 450px
+        height: 250px
         overflow: hidden
         position: relative
         display: flex
@@ -81,10 +86,12 @@ body, html
         box-shadow: 0px 0px 50px rgba(0,0,0,1)
         & img
           height: 100%
+          width: 100%
           object-fit: cover
       &-content
-        width: 70%
-        padding: 50px  
+        width: 80%
+        padding: 50px
+        padding-top: 100px  
         color: #fff
         font-family: Montserrat, sans-serif
         background-color: rgba(0,0,0,.5)
@@ -99,7 +106,7 @@ body, html
         & a
           background-color: #28a745
           border: 1px solid #28a745
-          width: 250px
+          width: 350px
           height: 40px
           display: flex
           justify-content: center
@@ -116,3 +123,14 @@ body, html
             background-color: #218838
             border-color: #1e7e34
             box-shadow: 0 0 0 0.1rem rgba(72,180,97,.5)
+
+
+
+
+
+
+// @import 'media/_1200'
+@import 'media/_992'
+// @import 'media/_768'
+// @import 'media/_576'
+// @import 'media/_320'
