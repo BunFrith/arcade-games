@@ -94,7 +94,9 @@ body, html
         padding-top: 100px  
         color: #fff
         font-family: Montserrat, sans-serif
-        background-color: rgba(0,0,0,.5)
+        background-color: rgba(0,0,0,.6)
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, .8)
+        
         & h2
           padding: 0
           margin: 0
@@ -112,7 +114,7 @@ body, html
           justify-content: center
           align-items: center
           text-decoration: none
-          font-size: 2.2rem
+          font-size: 2rem
           letter-spacing: 0.1em
           color: #fff
           transition: .4s all ease
@@ -129,8 +131,56 @@ body, html
 
 
 
-// @import 'media/_1200'
-@import 'media/_992'
-// @import 'media/_768'
-// @import 'media/_576'
-// @import 'media/_320'
+
+@media (max-width: 1199.98px)
+  *
+    font-size: 10px
+  .main-slider__nav
+    display: none !important
+  .container
+    align-items: center
+    justify-content: center
+  .main-slider__item-img
+    margin-top: 0
+  
+
+@media (max-width: 767.98px)
+  *
+    font-size: 8px
+  .main-slider__item-img
+    margin-top: 100px
+    width: 350px
+    height: 200px
+    margin-bottom: -40px
+  .main-slider__item-content
+    padding-top: 60px
+
+@media (max-width: 575.98px)
+  *
+    font-size: 8px
+  .logo
+    margin-left: 15px
+  .container
+    padding: 0
+  .cat-menu
+    display: none
+  .main-slider__item-img
+    margin-top: 100px
+    width: 250px
+    height: 150px
+    margin-bottom: -40px
+  .main-slider__item-content
+    padding: 30px
+    padding-top: 60px
+    width: 75%
+    & p
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 7
+      overflow: hidden
+    & a
+      width: 100% 
+  .menu-mobile
+    display: block
+  .burger
+    display: inline-block
