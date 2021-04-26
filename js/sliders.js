@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
       .find(".games-list__item")
       .height($(".games-list__item").width() / 2);
   });
-  $(window).resize(function () {
-    $(".games-list__item").height($(".games-list__item").width() / 2);
-  });
+  // $(window).resize(function () {
+  //   $(".games-list__item").height($(".games-list__item").width() / 2);
+  // });
 });
