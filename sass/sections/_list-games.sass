@@ -1,17 +1,20 @@
 .games-list
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-around
+  display: grid
+  margin: 0 auto
+  // flex-wrap: wrap
+  // justify-content: space-around
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 15px
   &__item
     overflow: hidden
-    width: 200px
+    width: 100%
     position: relative
     cursor: pointer
-    height: 100px
+    height: 130px
     transition: .4s all ease
     box-shadow: 0px 0px 15px rgba(0,0,0,.3)
     border: 1px solid rgba(0,0,0,.5)
-    margin: 7px 0
+    // margin: 10px 0
     & a
       position: absolute
       top: 0
@@ -29,9 +32,6 @@
         object-fit: cover
     & p 
       width: 100%
-      height: 100%
-      justify-content: center
-      align-items: center
       position: absolute
       font-size: 1.2rem
       padding: .5rem 0
@@ -43,9 +43,15 @@
       font-weight: 600
       letter-spacing: 0.1em
       color: #fff
-      height: 15%
       display: flex
       align-items: center
+      white-space: pre
+      white-space: nowrap
+      text-indent: 5px
+  // &:hover
+  //   & p
+  //     transition: 3s
+  //     text-indent: -905px
 
 
 

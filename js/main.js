@@ -41,4 +41,16 @@ jQuery(document).ready(function ($) {
       }
     }
   });
+
+  $(".burger").click(function () {
+    $(this).toggleClass("open");
+    $(".menu-mobile").toggleClass("active");
+  });
+
+  $(".accord .card-header").click(accord);
+  function accord() {
+    $(".accord .card-overlay").not($(this).next()).slideUp(1000);
+    $(this).next().slideToggle(1000).css("display", "flex");
+    $(this).find("span").toggleClass("rotateAcc");
+  }
 });
