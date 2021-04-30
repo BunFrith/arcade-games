@@ -10,7 +10,7 @@ const render = () => {
                 <div class="games-list__item-img">
                   <img src="${favGame.game_image}" alt="" />
                 </div>
-                <p>${favGame.game_name}</p>
+                <p class="scroll_title">${favGame.game_name}</p>
                 <a href="${favGame.game_link}"></a>
                 <div class="delgame" onclick="remGameFavs('${favGame.game_link}')">X</div>
               </div>
@@ -22,7 +22,7 @@ const render = () => {
                 <div class="games-list__item-img">
                   <img src="${favGame.game_image}" alt="" />
                 </div>
-                <p>${favGame.game_name}</p>
+                <p class="scroll_title">${favGame.game_name}</p>
                 <a href="${favGame.game_link}"></a>
                 <div class="delgame" onclick="remGameFavs('${favGame.game_link}')">X</div>
               </div>

@@ -12,7 +12,7 @@ const render = () => {
                   <div class="games-list__item-img">
                     <img src="${favGame.game_image}" alt="" />
                   </div>
-                  <p>${favGame.game_name}</p>
+                  <p class="scroll_title">${favGame.game_name}</p>
                   <a href="${favGame.game_link}"></a>
                   <div class="delgame" onclick="remGameFavs('${favGame.game_link}')">X</div>
                 </div>
@@ -34,7 +34,7 @@ const render = () => {
                     <div class="games-list__item-img">
                       <img src="${favGame.game_image}" alt="" />
                     </div>
-                    <p>${favGame.game_name}</p>
+                    <p class="scroll_title">${favGame.game_name}</p>
                     <a href="${favGame.game_link}"></a>
                     <div class="delgame" onclick="remGameFavs('${favGame.game_link}')">X</div>
                   </div>
@@ -47,11 +47,12 @@ const render = () => {
   }
 
   localStorage.setItem("favourites", JSON.stringify(favourites));
+  $("script.title-scroll").remove().appendTo("html");
 };
 render();
 function addGameFavs() {
   let img = $(this).closest(".sgame").find(".sgame-info__img img").attr("src"),
-    name = $(this).closest(".sgame-content__panel").find("h2").text(),
+    name = $(this).closest(".sgame").find(".sgame-info h1").text(),
     link = window.location.href;
   var check = favourites.some(function (e) {
     return link === e.game_link;
@@ -64,13 +65,24 @@ function addGameFavs() {
     };
     favourites = [gameObject, ...favourites];
     render();
+    $(".sgame-content__panel-favourites svg").addClass("infavs");
   } else {
     favourites = favourites.filter((favGame) => favGame.game_link !== link);
     render();
+    $(".sgame-content__panel-favourites svg").removeClass("infavs");
   }
 }
 let remGameFavs = (delLink) => {
   favourites = favourites.filter((favGame) => favGame.game_link !== delLink);
   render();
+  $(".sgame-content__panel-favourites svg").removeClass("infavs");
 };
 $(".sgame-content__panel-favourites svg").click(addGameFavs);
+
+let title = $(".sgame-info h1").text();
+let check = favourites.some(function (e) {
+  return title === e.game_name;
+});
+if (check) {
+  $(".sgame-content__panel-favourites svg").addClass("infavs");
+}

@@ -9,14 +9,14 @@
     height: 1px
     margin: 20px
   & h1 
-    font-size: 3rem 
+    font-size: 2.2rem 
     font-family: Montserrat, sans-serif
     letter-spacing: 0.1em
     line-height: 1.2em
     padding: 0
     margin: 0
     margin-bottom: 10px
-    font-weight: 600
+    font-weight: 500
     color: #fff
   &-info
     position: relative
@@ -30,16 +30,21 @@
         width: 100%
     &__descr
       width: 63%
-      font-family: Raleway, sans-serif
-      font-size: 1.8rem
-      font-weight: 300
-      color: #fff
-      line-height: 1.3em
-      // letter-spacing: 0.1em
+      & h1 
+        font-size: 2.2rem 
+      & p
+        font-family: Raleway, sans-serif
+        font-size: 1.8rem
+        font-weight: 300
+        color: #fff
+        line-height: 1.3em
+        // letter-spacing: 0.1em
 
   &-content
     position: relative
     z-index: 96
+    & h1 
+      font-size: 2.6rem
     &__game
       width: 100%
       height: 80vh
@@ -55,39 +60,54 @@
       display: flex
       align-items: center
       justify-content: space-between
-      & h2
-        font-size: 2rem
-        font-family: Montserrat, sans-serif
-        font-weight: 500
-        letter-spacing: 0.1em
-        line-height: 1.2em
-        margin: 0
-        text-align: center
+
       &-buttons
         width: 20%
         justify-content: flex-end
         position: relative
         display: flex
       &-favourites
-        width: 20%
         margin-left: 10px
         filter: blur(.5px)
+        & .infavs
+          fill: rgba(255, 0, 0, .6)
+          filter: drop-shadow(0px 0px 5px #ff0000)
         & svg 
+          transition: .4s all ease
           cursor: pointer
           width: 30px
-          fill: #fff
+          fill: rgba(255, 255, 255, .6)
           filter: drop-shadow(0px 0px 5px #fff)
       &-darken
         height: 100%
         cursor: pointer
         padding: 0px 10px
+        & .lights
+          & path
+            &:nth-child(5)
+              opacity: 0
+            &:nth-child(6)
+              opacity: 0
+            &:nth-child(7)
+              opacity: 0
+            &:nth-child(8)
+              opacity: 0
+            &:nth-child(9)
+              opacity: 0
         & svg
           width: 30px
           & path 
+            opacity: 1
+            transition: .4s all ease
             fill: #fff
+            filter: drop-shadow(0px 0px 3px #fff)
       &-reinit
         padding: 0px 10px
         cursor: pointer
+        transition: none
+        &.reload
+          transform: rotate(360deg)
+          transition: .4s all ease
         & svg
           width: 30px
           transform: rotateY(180deg)
@@ -110,9 +130,9 @@
       display: block
       margin-bottom: 10px
     &__list
-      display: flex
-      flex-wrap: wrap
-      justify-content: space-between
+      display: grid
+      grid-template-columns: repeat(4, 1fr)
+      grid-gap: 15px
 
 
 .darken-mode
