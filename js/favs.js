@@ -1,6 +1,5 @@
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let favList = document.querySelector(".favs");
-let favMob = document.querySelector(".favour");
 const render = () => {
   favList.innerHTML = "";
   let favListC = 0;
@@ -23,31 +22,11 @@ const render = () => {
     if (e != "end") throw e;
   }
 
-  if (window.innerWidth < 576) {
-    favMob.innerHTML = "";
-    let favMobC = 0;
-    try {
-      favourites.forEach((favGame) => {
-        favMobC++;
-        favMob.innerHTML += `
-                  <div class="games-list__item">
-                    <div class="games-list__item-img">
-                      <img src="${favGame.game_image}" alt="" />
-                    </div>
-                    <p class="scroll_title">${favGame.game_name}</p>
-                    <a href="${favGame.game_link}"></a>
-                    <div class="delgame" onclick="remGameFavs('${favGame.game_link}')">X</div>
-                  </div>
-              `;
-        if (favMobC === 3) throw "end";
-      });
-    } catch (e) {
-      if (e != "end") throw e;
-    }
-  }
-
   localStorage.setItem("favourites", JSON.stringify(favourites));
   $("script.title-scroll").remove().appendTo("html");
+  if (favourites.length == 0) {
+    favList.innerHTML = '<p class="fav_msg">В списке нет игр</p>';
+  }
 };
 render();
 function addGameFavs() {

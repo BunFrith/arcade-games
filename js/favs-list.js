@@ -1,6 +1,7 @@
 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 let favList = document.querySelector(".favs");
 let favsAll = document.querySelector(".favs-list");
+let main = document.querySelector(".main");
 const render = () => {
   favList.innerHTML = "";
   favsAll.innerHTML = "";
@@ -29,7 +30,12 @@ const render = () => {
           `;
   });
   localStorage.setItem("favourites", JSON.stringify(favourites));
+  if (favourites.length == 0) {
+    main.innerHTML = '<p class="favl_msg">Вы пока не добавили ни одной игры в избранное</p>';
+    favList.innerHTML = '<p class="fav_msg">В списке нет игр</p>';
+  }
 };
+console.log(favourites);
 render();
 let remGameFavs = (delLink) => {
   favourites = favourites.filter((favGame) => favGame.game_link !== delLink);
